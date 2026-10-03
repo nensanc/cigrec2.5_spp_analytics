@@ -46,8 +46,8 @@ flowchart LR
 | **Full-year analysis** (`Time Series Analysis/main.ipynb`) | Daily average, 7-day rolling mean/std, Augmented Dickey-Fuller test, autocorrelation (1- and 3-day lags), additive seasonal decomposition (periods 1, 3, 7, 14, 30), auto-ARIMA trained on Jan–Sep and tested on Oct–Dec, RMSE |
 | **Quarter / semester analysis** | The same steps per period: `main trimestre_1_2.ipynb` (Q1–Q2, with auto-ARIMA per quarter), `main_trimestre_3_4.ipynb` and `main_Prueba.ipynb` (Q3–Q4), `main_semestre1.ipynb`, `main_semestre2.ipynb` |
 | **LSTM forecasting** (`simple LSTM/rnn.ipynb`) | 80/20 split (7,008 / 1,752 hours), Min-Max scaling, 60-hour input window, 4 stacked LSTM layers (50 units, dropout 0.2) + dense output. Loads the trained model from `LSTM.h5` and forecasts the test period, both one step ahead and recursively (feeding predictions back as inputs) |
-| **LSTM reference example** (`simple LSTM/rnn_google.py`) | Tutorial script (credited to its original author in the header) that predicts Google stock prices with the same LSTM architecture, using `Google_Stock_Price_Train/Test.csv` |
-| **References** | Papers on LSTM and hydro/wind forecasting, the CIGRE C2.5 talk notes (`Files/`), and `Links de Interes` |
+| **LSTM tutorial example** (`simple LSTM/rnn_google.py`) | Script from a course tutorial (author: *juangabriel*, as stated in its header) that predicts Google stock prices with the same LSTM architecture, using `Google_Stock_Price_Train/Test.csv`. Kept as a learning reference; **it is not part of the main analysis** |
+| **Supporting material** | CIGRE C2.5 talk notes (`Files/`), `Links de Interes`, and the papers listed under [References](#references) |
 
 ## Results
 
@@ -89,10 +89,9 @@ cigrec2.5_spp_analytics/
 │   ├── rnn.ipynb                        # LSTM forecast on the run-of-river series
 │   ├── LSTM.h5                          # Trained LSTM model
 │   ├── DataGeneración_filo.csv          # Copy of the dataset used by rnn.ipynb
-│   ├── rnn_google.py                    # Reference LSTM example (Google stock)
-│   ├── Google_Stock_Price_Train.csv / _Test.csv
-│   └── *.pdf                            # Reference papers
-├── Files/                               # Reference paper + CIGRE C2.5 talk notes
+│   ├── rnn_google.py                    # Course tutorial example (Google stock), not part of the analysis
+│   └── Google_Stock_Price_Train.csv / _Test.csv   # Tutorial data
+├── Files/                               # CIGRE C2.5 talk notes
 ├── Links de Interes                     # Useful links
 ├── docs/images/                         # Plots exported from the notebooks
 └── LICENSE                              # MIT
@@ -116,11 +115,18 @@ Then open the notebooks with Jupyter:
 
 ## Notes and Limitations
 
-- `main_semestre2.ipynb` reads the CSV from an absolute local path. Change it to `../DataGeneración_filo.csv` before running it.
 - `main_semestre1.ipynb`, `main_semestre2.ipynb`, `main_trimestre_3_4.ipynb` and `main_Prueba.ipynb` stop at the decomposition import, without running the decomposition.
 - `main.py` and `_source/__init__.py` are empty.
 - The dataset is duplicated in the root and in `simple LSTM/`.
 - Notebook comments and plot labels are mostly in Spanish.
+
+## References
+
+Papers consulted during the project. The PDFs were removed from the repository; use the DOI links to access them.
+
+1. P. Malhan and M. Mittal, "A novel ensemble model for long-term forecasting of wind and hydro power generation," *Energy Conversion and Management*, vol. 251, p. 114983, 2022. DOI: [10.1016/j.enconman.2021.114983](https://doi.org/10.1016/j.enconman.2021.114983)
+2. R. Jiao, T. Zhang, Y. Jiang and H. He, "Short-Term Non-Residential Load Forecasting Based on Multiple Sequences LSTM Recurrent Neural Network," *IEEE Access*, vol. 6, pp. 59438–59448, 2018. DOI: [10.1109/ACCESS.2018.2873712](https://doi.org/10.1109/ACCESS.2018.2873712)
+3. M. S. Hossain and H. Mahmood, "Short-Term Photovoltaic Power Forecasting Using an LSTM Neural Network and Synthetic Weather Forecast," *IEEE Access*, vol. 8, pp. 172524–172533, 2020. DOI: [10.1109/ACCESS.2020.3024901](https://doi.org/10.1109/ACCESS.2020.3024901)
 
 ## Authors
 
