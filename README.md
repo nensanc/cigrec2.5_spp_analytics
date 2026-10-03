@@ -14,7 +14,7 @@
 
 ## Overview
 
-This repository applies data analytics and deep learning to **small power plants (SPP)** based on hydraulic generation. It was developed within the **CIGRE C2.5 group** (see [CIGRE-C2.5](https://github.com/nensanc/CIGRE-C2.5)), whose goal is to apply AI models to power-system operation. The `Files/` folder holds notes from a CIGRE C2.5 talk with suggestions for this work, such as comparing against persistence and XM's redispatch schedule, trying ARIMA, and using MAPE.
+This repository applies data analytics and deep learning to **small power plants (SPP)** based on hydraulic generation. It was developed within the **CIGRE C2.5 group** (see [CIGRE-C2.5](https://github.com/martinmsanchezm/CIGRE-C2.5)), whose goal is to apply AI models to power-system operation. The `Files/` folder holds notes from a CIGRE C2.5 talk with suggestions for this work, such as comparing against persistence and XM's redispatch schedule, trying ARIMA, and using MAPE.
 
 The dataset is the **hourly generation (kWh) of all run-of-river ("filo de agua") resources in Colombia during 2021**. It was built from XM's public API with [`pydataxm`](https://pypi.org/project/pydataxm/):
 
@@ -132,7 +132,7 @@ Papers consulted during the project. The PDFs were removed from the repository; 
 
 Developed by members of the CIGRE C2.5 group:
 
-- **Martin Sanchez** ([@nensanc](https://github.com/nensanc))
+- **Martin Sanchez** ([@martinmsanchezm](https://github.com/martinmsanchezm))
 - [@juan-suarezp](https://github.com/juan-suarezp)
 - [@jsgaleano](https://github.com/jsgaleano)
 - [@luis9504](https://github.com/luis9504)
